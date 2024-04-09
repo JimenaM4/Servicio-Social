@@ -1,0 +1,284 @@
+header{
+    width: 98.7vw;
+    height: 14vh;
+    background-color: #9B8BAF;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly; 
+    padding: 0.5rem;
+}
+
+/* main{
+    display:flex;
+    justify-content: center;
+} */
+
+#logos
+{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    gap: 1.5rem; 
+}
+
+#unam{
+    width: 4.5rem;
+    
+}
+#enp9{
+    width: 4rem;
+    
+}
+#titulo{
+    width: 20rem;
+    font-size: 2.5rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#barra-busqueda{
+    display: flex;
+    justify-content: baseline;
+}
+
+#busqueda{
+    width: 25rem;
+    height: 3rem;
+    background-color: #785E98;
+    border-radius: 50em 0em 0em 50em;
+    display: flex;
+    align-items: center;
+    justify-content:start;
+}
+
+#texto_busqueda{
+    font-size: 1.5rem;
+    position: relative;
+    left: 8%; 
+    margin-bottom: 0;
+    border: none; /* Eliminar borde */
+    background: none; /* Eliminar fondo */
+    outline: none; /* Eliminar borde al enfocar */
+    flex: 1; /* Para que ocupe todo el espacio restante */
+    padding-left: 10px; /* Añadir un pequeño espacio a la izquierda */
+    color:#FFFFFF;
+}
+
+#texto_busqueda::placeholder {
+    color: rgba(255, 255, 255, 0.308); /* Cambiar el color del texto del placeholder a blanco */
+}
+
+#lupa {
+    width: 4rem; /* Ajusta el ancho del contenedor de la lupa */
+    height: 3rem; /* Ajusta la altura del contenedor de la lupa */
+    background-color: #BA9BC6;
+    border-radius: 0em 50em 50em 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2.1rem; /* Ajusta el margen izquierdo */
+}
+
+#img_lupa {
+    width: 1.8rem; /* Ajusta el ancho de la imagen de la lupa */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+#mas{
+    height: 70%;
+    width: 8%;
+    position: relative;
+    background-color: #7255A3;
+    border-radius: 50em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+#simbolo_mas{
+    font-size: 4rem;
+    color: #ffffff;
+    /* line-height: 0; */
+}
+/* #carrusel{
+    display:flex;
+    flex-wrap: nowrap;
+    width: 98vw;
+    height: 30vh;
+    background-color: #E9DFF6;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+} */
+
+
+#fondo-carrusel
+{
+    background-color: rgb(237, 238, 239);
+    /*padding: 1rem;*/
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#carrusel
+{
+    width: 650px;
+    height: 330px;
+    align-self: center;
+    margin-top: 1rem;
+    align-self: center;
+}
+.centrar
+{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+/*#menor_que{
+    font-size: 3rem;
+    color: #000000;
+}
+#mayor_que{
+    font-size: 3rem;
+    color: #000000;
+}
+.img_lados{
+    width: 4rem;
+    height: 4rem;
+}
+#imagen_izquierda{
+    width: 100%;
+    height: 100%;
+}
+#img_medio{
+    width: 6rem;
+    height: 6rem;
+}
+#imagen_medio{
+    width: 100%;
+    height: 100%;
+}
+#imagen_derecha{
+    width: 100%;
+    height: 100%;
+}*/
+#opciones{
+    display: grid;
+    grid-template-columns: repeat(4, 10rem);
+    grid-template-rows: repeat(2, 15rem);
+    gap: 2rem;
+    width: 97vw;
+    height: 41vh;
+    overflow-y: scroll;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.cuadro_op{
+    width: 14rem;
+    height: 14rem;
+    padding: 1rem;
+    
+}
+footer{
+    width: 98.7vw;
+    height: 7vh;
+    background-color: #9B8BAF;
+    padding: 0.5rem;
+}
+#organigrama{
+    background-color: #7255A3;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#PAT{
+    background-color: #F8772E;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#expediente{
+    background-color: #4197D6;
+    grid-column: 3/5;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#recursos{
+    background-color: #11A493;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#cuestionarios{
+    background-color: #EF30A2;
+    grid-column: 4/5;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+.icon{
+    width: 5rem;
+}
+#organigrama_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
+#recursos_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
+#cuestionarios_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
+#PAT_texto{
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    grid-row: 2/3;
+}
+#expediente_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
+#organigrama_icon{
+    grid-row: 1/2;
+}
+#recursos_icon{
+    grid-row: 1/2;
+}
+#cuestionarios_icon{
+    grid-row: 1/2;
+}
+#expediente_icon{
+    grid-row: 1/2;
+}
+p{
+    text-align: center;
+}
