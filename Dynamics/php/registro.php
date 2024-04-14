@@ -119,8 +119,8 @@
         mysqli_stmt_execute($stmt);
         $res = mysqli_stmt_get_result($stmt);
         $idGrupo = mysqli_fetch_assoc($res);
-        $sql = "SELECT clave FROM asignatura WHERE nombre=?";
-        // // obtener clave de la asignatura
+        $sql = "SELECT idAsignatura FROM asignatura WHERE clave=?";
+        // // obtener id de la asignatura
         $stmt = mysqli_prepare($conexion, $sql);
         mysqli_stmt_bind_param($stmt, "i", $asignatura); // "i" indica que es un parámetro de tipo entero
         mysqli_stmt_execute($stmt);
@@ -136,7 +136,7 @@
             {
                 echo "No se puedo conectar la base";
             }else{
-                $sql =  "INSERT INTO tutores (idTutor, rfc, idGrupo, clave, ciclo) VALUES (NULL, '$RFC', {$idGrupo['idGrupo']}, {$idAsignatura['clave']}, $ciclo)";
+                $sql =  "INSERT INTO tutores (idTutor, rfc, idGrupo, idAsignatura, ciclo) VALUES (NULL, '$RFC', {$idGrupo['idGrupo']}, {$idAsignatura['idAsignatura']}, $ciclo)";
                 $res = mysqli_query($conexion, $sql);
                 if(!$res)
                 {
