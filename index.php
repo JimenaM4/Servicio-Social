@@ -59,10 +59,10 @@
             <hr>
             <input class="datos" type="text" id="usuario" name="usuario" placeholder="Usuario" required>
             <input class="datos" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-            <a class="link" href="Templates/registro.html">¿No tienes una cuenta? ¡Regístrate!</a>
             <button class="button" id="btnIniciarSesion" type="submit">
                 Iniciar sesión
             </button>
+            <a class="link" href="Templates/registro.html">¿No tienes una cuenta? ¡Regístrate!</a>
         </div>
     </div>
     </form>
