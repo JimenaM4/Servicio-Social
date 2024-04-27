@@ -3,57 +3,41 @@ window.addEventListener("load",()=>{
     const usuario = document.getElementById('usuario');
     const contrasena = document.getElementById('contrasena');
     const btnIniciarSesion = document.getElementById('btnIniciarSesion');
-
     const inicioSesion = document.getElementById("inicioSesion");
 
-    // function ocultar() {//funcion para ocultar los elementos
-    //     var elements = [nombre, apellidoPat, apellidoMat, correo, numTrabajador, btnRegistro, numCuenta, fechaNacimiento, grupo, asignatura, RFC];
-    //     for (var i = 0; i < elements.length; i++) {
-    //         elements[i].style.display = "none";
-    //     }
-    // }
-    
-    // function mostrar(elements) {//funcion para mostrar los elementos
-    //     for (var i = 0; i < elements.length; i++) {
-    //         elements[i].style.display = "block";
-    //         elements[i].ariaRequired = "true";
-    //     }
-    // }
-
-    // fechaNacimiento.addEventListener("focus",()=>{//cambiar el tipo de input para que se muestre el calendario
-    //     fechaNacimiento.type = "date";
-    // });
-
-    // fechaNacimiento.addEventListener("blur",()=>{//regresar el tipo de input a text para que se muestre el placeholder
-    //     fechaNacimiento.type = "text";
-    // });
-
-    // ocultar();//ocultar todos los elementos al inicio
-
-    // usuario.addEventListener('change', function() {
-    //     if (usuario.value == "0") {//si el usuario selecciona la opcion de seleccionar
-    //         // ocultar();
-    //         cuerpo.style.backgroundImage = "url(../../Statics/media/img/img_registro.png)";
-    //     }
-    //     if (usuario.value == "1") {//si el usuario selecciona la opcion de alumno
-    //         // ocultar();
-    //         // mostrar([numCuenta, nombre, apellidoPat, apellidoMat, correo, fechaNacimiento, btnRegistro, grupo]);
-    //         // form.style.height = "93%";
-    //         cuerpo.style.backgroundImage = "url(../../Statics/media/img/img_regis_alum.png)";
-    //     }
-    //     if (usuario.value == "2") {//si el usuario selecciona la opcion de profesor
-    //         // ocultar();
-    //         // form.style.height = "86%";
-    //         // mostrar([nombre, apellidoPat, apellidoMat, correo, numTrabajador, btnRegistro, RFC]);
-    //         cuerpo.style.backgroundImage = "url(../../Statics/media/img/img_regis_prof.png)";
-    //     }
-    //     if (usuario.value == "3") {//si el usuario selecciona la opcion de tutor
-    //         // ocultar();
-    //         // form.style.height = "86%";
-    //         // mostrar([RFC, grupo, asignatura, btnRegistro]);
-    //         cuerpo.style.backgroundImage = "url(../../Statics/media/img/img_regis_tut.png)";
-    //     }
-    // });
+    function ocultar() {
+        var elements = [usuario, contrasena, btnIniciarSesion];
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "none";
+        }
+    }
+   function mostrar() {
+        var elements = [usuario, contrasena, btnIniciarSesion];
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "block";
+        }
+    }
+    ocultar();
+    tipoUsuario.addEventListener('change', function() {
+        if (tipoUsuario.value == "0") {
+            ocultar();
+        }
+        if (tipoUsuario.value == "1") {
+            mostrar();
+            usuario.placeholder = "Número de cuenta";
+            contrasena.placeholder = "Fecha de nacimiento (aaaammdd)";
+        }
+        if (tipoUsuario.value == "2") {
+            mostrar();
+            usuario.placeholder = "RFC";
+            contrasena.placeholder = "Número de trabajador";
+        }
+        if (tipoUsuario.value == "3") {
+            mostrar();
+            usuario.placeholder = "RFC";
+            contrasena.placeholder = "Número de trabajador";
+        }
+    });
 
     function testRegex(value, regex, message) {
         if (!regex.test(value)) {

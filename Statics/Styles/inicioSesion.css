@@ -81,22 +81,12 @@ body {
   background-position:left;
 }
 
-#contenido{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-
-}
 /* formulario */
-.form_inicio{
-  width: 100%;
-  height: 300px;
-  max-width: 500px;
+#contenido{
+  width: 30%;
+  height: 50%;
   margin: auto;
-  margin-top: 25%;
+  margin-top: 8.5%;
   background: #9B8BAF;
   opacity:0.9;
   padding: 20px 30px;
@@ -114,9 +104,24 @@ body {
   border-bottom:1px solid white;
 }
 
+.form_inicio input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 3px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background:#D4C6D9;
+  border-color: #452678;
+}
+
+.form_inicio input:focus {
+  background: #ffffff;
+  border-color: #452678;
+}
+
 .form_inicio a
 {
-  color: purple;
+  color: rgb(120, 24, 120);
   text-decoration: none;
   font-size: 10px;
   text-align: center;
@@ -140,6 +145,7 @@ body {
   padding: 10px;
   background-color: rgb(237, 237, 237);
   font-size:large;
+  border-color: #452678;
 }
 .link{
   background-color: #eeeaf3a4;
@@ -178,12 +184,6 @@ body {
   border-radius: 10px;
   border-color: #452678;    
   margin-bottom:2%;
-}
-
-.datos input{
-  margin-bottom:2%;
-  background-color: #D4C6D9;
-  border-color: #452678;
 }
 
 /*-------------------------------FOOTER--------------------------------- */
