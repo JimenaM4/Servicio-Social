@@ -121,18 +121,19 @@ body {
 
 .form_inicio a
 {
-  color: rgb(120, 24, 120);
+  color:#452678;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 1rem;
+  font-weight: bold;
   text-align: center;
+  margin: 6%;
   align-content: center;
 }
 
 .form_inicio a:hover
 {
-  color: rgb(170, 5, 148);
+  color:#501ea1;
   text-decoration: underline;
-  font-size: 10px;
   text-align: center;
   align-content: center;
 }
@@ -145,19 +146,16 @@ body {
   padding: 10px;
   background-color: rgb(237, 237, 237);
   font-size:large;
-  border-color: #452678;
+  border-color: #3a1e66;
 }
-.link{
-  background-color: #eeeaf3a4;
-  margin: 5%;
-}
+
 .button {
   width: 100%;
   border: 5px;
   border-radius: 5px;
   margin-bottom: 15px;
-  padding: 15px;
-  background-color: #9c189e;
+  padding: 10px;
+  background-color: #452678;
   font-size:large;
   color: white;
   font-weight: bold;
@@ -165,7 +163,6 @@ body {
 }
 
 .button:hover {
-  background-color: #6e0d6e;
   color: rgb(233, 224, 231);
   cursor: pointer;  
 }
