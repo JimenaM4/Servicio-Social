@@ -71,16 +71,12 @@
 /* --------------------------------------------------------------------- */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   background-image: url(../media/img/fondoPrepa.jpg);
   background-size: cover;
   background-size:auto;
   background-repeat: no-repeat;
   background-position:left;
 }
-
 /* formulario */
 #contenido{
   width: 30%;

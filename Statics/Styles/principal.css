@@ -1,5 +1,5 @@
 header{
-    width: 98.7vw;
+    width: 100%;
     height: 14vh;
     background-color: #9B8BAF;
     position: relative;
@@ -103,21 +103,11 @@ header{
     color: #ffffff;
     /* line-height: 0; */
 }
-/* #carrusel{
-    display:flex;
-    flex-wrap: nowrap;
-    width: 98vw;
-    height: 30vh;
-    background-color: #E9DFF6;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.5rem;
-} */
 
 
 #fondo-carrusel
 {
-    background-color: rgb(237, 238, 239);
+    background-color: #E9DFF6;
     /*padding: 1rem;*/
     display:flex;
     flex-direction: row;
@@ -128,7 +118,7 @@ header{
 
 #carrusel
 {
-    width: 650px;
+    width: 100%;
     height: 330px;
     align-self: center;
     margin-top: 1rem;
@@ -141,44 +131,15 @@ header{
     align-content: center;
 }
 
-
-
-/* #menor_que{
-    font-size: 3rem;
-    color: #000000;
-}
-#mayor_que{
-    font-size: 3rem;
-    color: #000000;
-}
-.img_lados{
-    width: 4rem;
-    height: 4rem;
-}
-#imagen_izquierda{
-    width: 100%;
-    height: 100%;
-}
-#img_medio{
-    width: 6rem;
-    height: 6rem;
-}
-#imagen_medio{
-    width: 100%;
-    height: 100%;
-}
-#imagen_derecha{
-    width: 100%;
-    height: 100%;
-} */
 #opciones{
     display: flex;
     flex-wrap: nowrap;
-    width: 98vw;
+    width: 100%;
     height: 60vh;
     align-items: center;
     justify-content: space-evenly;
     padding: 0.5rem;
+    background-color: #e9dff693;
 }
 .cuadro_op{
     width: 14rem;
@@ -187,7 +148,7 @@ header{
     
 }
 footer{
-    width: 98.7vw;
+    width: 98.2vw;
     height: 7vh;
     background-color: #9B8BAF;
     padding: 0.5rem;
@@ -220,6 +181,38 @@ footer{
     justify-items: center;
     align-items: center;
 }
+#registrarse{
+    background-color: #EF30A2;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#expediente{
+    background-color: #4197D6;
+    grid-column: 3/5;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    justify-items: center;
+    align-items: center;
+}
+#expediente_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
+#expediente_icon{
+    grid-row: 1/2;
+}
+#registrarse_icon{
+    grid-row: 1/2;
+}
+#registrarse_texto{
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+}
 .icon{
     width: 5rem;
 }
@@ -251,4 +244,82 @@ footer{
 }
 p{
     text-align: center;
+}
+.opc_admin{
+    border-radius: 20px;
+}
+
+#usuarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #67729d5e;
+}
+.usuarios_texto{
+    color: #000000;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+}
+#user1{
+    background-color: #4662d078;
+    font-weight: bold;
+}
+#user2{
+    background-color: #53629c90;
+}
+#user3{
+    background-color: #53629c70;
+}
+#user4{
+    background-color: #53629c48;
+}
+
+#recursos_admi{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #a9b65e63;
+}
+.recursosadmi_texto{
+    color: #000000;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+}
+#recur1{
+    background-color: #A9B65E;
+    font-weight: bold;
+} 
+
+#cuestionarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #5bb6b24d;
+}
+.cuestionarios_texto{
+    color: #000000;
+    font-size: 1.05rem;
+    grid-row: 2/3;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+}
+#cuest1{
+    background-color: #5BB6B1;
+    font-weight: bold;
 }
