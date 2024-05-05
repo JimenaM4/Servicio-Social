@@ -1,0 +1,40 @@
+.texto{
+    font-size: 1.5rem;
+}
+#crear{
+    width: min-content;
+    height: min-content;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    opacity:0.9;
+    background-color: #9b8baf;
+}
+#borrar{
+    width: min-content;
+    height: min-content;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    opacity:0.9;
+    background-color: #9b8baf;
+}
+#formulario{
+    height: 60vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    border-radius: 2rem;
+    background-color: #d2bced;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#enviar{
+    width: min-content;
+    border-radius: 1rem;
+    background-color: #d2bced;
+}
