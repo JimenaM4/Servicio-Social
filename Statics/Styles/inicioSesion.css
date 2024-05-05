@@ -1,0 +1,191 @@
+
+/*-------------------------------NAVBAR--------------------------------- */
+#barra{
+  background-color: #9B8BAF;
+  width: 100%;
+}
+#navbar{
+  width: 100%;
+  background-color: #9B8BAF;
+  display:inline-flex;
+  font-family:'Times New Roman', Times, serif;
+  font-size:xx-large;
+  font-weight: bold;
+  height: 10%;
+  position: relative;
+}
+.escudo{
+  width: 6.5%;
+  height: 100%; 
+  margin-left: 1%;
+  position: absolute;
+}
+#ENP9{
+  right: 1%;
+}
+#titulo{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#text{
+  align-content: center;
+  margin: auto;
+  display: block;
+}
+/*---------------------------------MODAL-------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10%;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 30%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(../media/img/fondoPrepa.jpg);
+  background-size: cover;
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position:left;
+}
+/* formulario */
+#contenido{
+  width: 30%;
+  height: 50%;
+  margin: auto;
+  margin-top: 8.5%;
+  background: #9B8BAF;
+  opacity:0.9;
+  padding: 20px 30px;
+  border-radius: 15px;
+  color: black
+}
+
+.form_inicio h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+  height: 40px;
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom:1px solid white;
+}
+
+.form_inicio input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 3px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background:#D4C6D9;
+  border-color: #452678;
+}
+
+.form_inicio input:focus {
+  background: #ffffff;
+  border-color: #452678;
+}
+
+.form_inicio a
+{
+  color:#452678;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 6%;
+  align-content: center;
+}
+
+.form_inicio a:hover
+{
+  color:#501ea1;
+  text-decoration: underline;
+  text-align: center;
+  align-content: center;
+}
+
+.datos {
+  width: 100%;
+  border: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(237, 237, 237);
+  font-size:large;
+  border-color: #3a1e66;
+}
+
+.button {
+  width: 100%;
+  border: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #452678;
+  font-size:large;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: rgb(233, 224, 231);
+  cursor: pointer;  
+}
+.error{
+  background-color: rgb(238, 107, 107);
+  color:black;
+  padding: 10px;
+  width: 95%;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+/* -------------- */
+
+#select{
+  background-color: #D4C6D9;
+  border-radius: 10px;
+  border-color: #452678;    
+  margin-bottom:2%;
+}
+
+/*-------------------------------FOOTER--------------------------------- */
+#pie-pagina{
+  background-color: #9B8BAF;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  display: inline-flex;
+}
+/* --------------------------------------------------------------------- */
