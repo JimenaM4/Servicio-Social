@@ -17,6 +17,25 @@
     opacity:0.9;
     background-color: #9b8baf;
 }
+
+#cambiar{
+    width: max-content;
+    height: max-content;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    opacity:0.9;
+    background-color: #9b8baf;
+    align-items: start;
+    justify-content: start;
+}
+
+#centrar{
+
+    align-items: start;
+    justify-content: space-between;
+}
+
+
 #formulario{
     height: 60vh;
     display: flex;
@@ -37,4 +56,5 @@ fieldset{
     width: min-content;
     border-radius: 1rem;
     background-color: #d2bced;
+    align-self: center;
 }
