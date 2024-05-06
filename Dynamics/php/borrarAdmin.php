@@ -32,8 +32,10 @@
     $usuario=filter_var($usuario,FILTER_SANITIZE_STRING);
     $contrasena=filter_var($contrasena,FILTER_SANITIZE_STRING);
     //regex
-    $usuarioR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12})?$/i', $usuario);
-    $contrasenaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasena);
+    // $usuarioR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12})?$/i', $usuario);
+    $usuarioR = preg_match('/^AdminP9T[1-100]+$/i', $usuario);
+    // $contrasenaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasena);
+    $contrasenaR=preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/', $contrasena);
     if($contrasenaR==0||$usuarioR==0)
     {
         $respuesta=[

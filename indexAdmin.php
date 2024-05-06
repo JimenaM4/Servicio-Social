@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="./Statics/styles/inicioSesion.css">
+    <link rel="stylesheet" href="./Statics/Styles/inicioSesion.css">
     <link rel="stylesheet" href="./libs/bootstrap-5.3.0-dist/css/bootstrap.css">
     <link rel="shortcut icon" href="./Statics/media/img/favicon.png" type="image/png"> 
     <script src="./libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
-    <script src="./Dynamics/js/inicioSesion_admin.js"></script>
+    <script src="./Dynamics/js/inicioSesionAdmin.js"></script>
     <favicon href="./Statics/media/img/favicon.png" type="image/x-icon">
 </head>
 <body>
@@ -35,18 +35,8 @@
     </div>
     <div id="cuerpo">
         <div id="contenido"> 
-        <form id="inicioSesion" method="post" target="_self" action="./Dynamics/php/iniciarSesionAdmin.php">
-            <?php
-                if (isset($_GET['error'])) {
-                ?>
-                <p class="error">
-                    <?php
-                        echo $_GET['error']; 
-                    ?>
-                </p>
-                <?php
-                }
-            ?>
+        <!-- <form id="inicioSesion" method="post" target="_self"> -->
+        <form id="inicioSesion">
             <div class="form_inicio">
                 <h1>Iniciar sesión</h1>
                 <hr>
