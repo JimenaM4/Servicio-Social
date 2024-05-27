@@ -18,12 +18,12 @@
         </div>
         <h1 id="titulo">Portal de tutorias</h1>
         <div id="barra-busqueda">
-            <?php
+           <?php
                 //seteo la vida de la session en 7200 segundos    
                 ini_set("session.cookie_lifetime","7200");
                 //seteo el maximo tiempo de vida de la session
                 ini_set("session.gc_maxlifetime","7200");
-                //inicio la session    
+                //inicio la session  
                 session_start();
                 $usuario=$_SESSION['usuario'];
                 if(isset($_SESSION['usuario'])){
@@ -35,7 +35,7 @@
             <div id="busqueda"><input id="texto_busqueda" type="text" placeholder="Búsqueda"></div>
             <div id="lupa"><img src="../../Statics/media/img/lupa.png" alt="lupa" id="img_lupa"></div>
         </div>
-        <div id="mas"><p id="simbolo_mas">≡</p></div>
+            <div id="mas"><p id="simbolo_mas">≡</p></div>
     </header>
     <main>
         <section id="fondo-carrusel">
@@ -71,13 +71,12 @@
         </section>
         <section id="opciones">
             <article class="cuadro_op" id="organigrama"><img class="icon" id="organigrama_icon" src="../../Statics/media/img/organigrama_icon.png" alt="imagen organigrama"><br><p id="organigrama_texto">Organigrama y directorio</p></article>
-            <article class="cuadro_op" id="cuestionarios"><img class= "icon" id="cuestionario_icon" src="../../Statics/media/img/cuestionarios_icon.png" alt="imagen cuestionarios"><br><p id="cuestionarios_texto">Cuestionarios</p></article>
-            <article class="cuadro_op" id="recursos"><img class="icon" id="recursos_icon" src="../../Statics/media/img/recursos_icon.png" alt="imagen recursos"><br><p id="recursos_texto">Recursos</p></article>
             <article class="cuadro_op" id="PAT"><p id="PAT_texto">PAT</p></article>
+            <article class="cuadro_op" id="recursos"><img class="icon" id="recursos_icon" src="../../Statics/media/img/recursos_icon.png" alt="imagen recursos"><br><p id="recursos_texto">Recursos</p></article>
+            <article class="cuadro_op" id="registrarse"><img class="icon" id="registrarse_icon" src="../../Statics/media/img/registrarse_icon.png" alt="imagen registrarse"><br><p id="registrarse_texto">Registrarse como tutor</p></article>
         </section>
     </main>
     <footer>
-
     </footer>
 </body>
 </html>

@@ -23,7 +23,7 @@
                 ini_set("session.cookie_lifetime","7200");
                 //seteo el maximo tiempo de vida de la session
                 ini_set("session.gc_maxlifetime","7200");
-                //inicio la session    
+                //inicio la session  
                 session_start();
                 $usuario=$_SESSION['usuario'];
                 if(isset($_SESSION['usuario'])){
@@ -35,7 +35,7 @@
             <div id="busqueda"><input id="texto_busqueda" type="text" placeholder="Búsqueda"></div>
             <div id="lupa"><img src="../../Statics/media/img/lupa.png" alt="lupa" id="img_lupa"></div>
         </div>
-        <div id="mas"><p id="simbolo_mas">≡</p></div>
+            <div id="mas"><p id="simbolo_mas">≡</p></div>
     </header>
     <main>
         <section id="fondo-carrusel">
@@ -71,9 +71,10 @@
         </section>
         <section id="opciones">
             <article class="cuadro_op" id="organigrama"><img class="icon" id="organigrama_icon" src="../../Statics/media/img/organigrama_icon.png" alt="imagen organigrama"><br><p id="organigrama_texto">Organigrama y directorio</p></article>
-            <article class="cuadro_op" id="cuestionarios"><img class= "icon" id="cuestionario_icon" src="../../Statics/media/img/cuestionarios_icon.png" alt="imagen cuestionarios"><br><p id="cuestionarios_texto">Cuestionarios</p></article>
             <article class="cuadro_op" id="recursos"><img class="icon" id="recursos_icon" src="../../Statics/media/img/recursos_icon.png" alt="imagen recursos"><br><p id="recursos_texto">Recursos</p></article>
+            <article class="cuadro_op" id="cuestionarios"><img class= "icon" id="cuestionario_icon" src="../../Statics/media/img/estadisticas_icon.png" alt="imagen cuestionarios y estadisticas"><br><p id="cuestionarios_texto">Cuestionarios y estadisticas</p></article>
             <article class="cuadro_op" id="PAT"><p id="PAT_texto">PAT</p></article>
+            <article class="cuadro_op" id="expediente"><img class="icon" id="expediente_icon" src="../../Statics/media/img/expedientes_icon.png" alt="imagen estadisticas"><br><p id="expediente_texto">Expedientes de alumnos y tutores</p></article>
         </section>
     </main>
     <footer>
