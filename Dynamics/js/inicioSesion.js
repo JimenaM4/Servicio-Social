@@ -113,15 +113,15 @@ window.addEventListener("load",()=>{
                 console.log(datosJSON.mensaje);
                 if(datosJSON.mensaje=="1")
                 {
-                    window.location.href = "./Templates/principal.html";
+                    window.location.href = "./dynamics/php/principal.php";
                 }
                 else if(datosJSON.mensaje=="2")
                 {
-                    window.location.href = "./Templates/principal_profe.html";
+                    window.location.href = "./dynamics/php/principal_profe.php";
                 }
                 else if(datosJSON.mensaje=="3")
                 {
-                    window.location.href = "./Templates/principal_tutor.html";
+                    window.location.href = "./dynamics/php/principal_tutor.php";
                 }
                 else
                 {
