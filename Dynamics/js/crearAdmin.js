@@ -5,7 +5,7 @@ window.addEventListener("load", ()=>{
     enviar.addEventListener("click",(e)=>{
         e.preventDefault();
         datosForm = new FormData(crear);
-        fetch("../Dynamics/php/crearAdmin.php",{
+        fetch("./crearAdmin.php",{
             method: "POST",
             body: datosForm,
         }).then((respuesta)=>{

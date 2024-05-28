@@ -5,7 +5,7 @@ window.addEventListener("load", ()=>{
     enviar.addEventListener("click",(e)=>{
         e.preventDefault();
         datosForm = new FormData(borrar);
-        fetch("../Dynamics/php/borrarAdmin.php",{
+        fetch("./borrarAdmin.php",{
             method: "POST",
             body: datosForm,
         }).then((respuesta)=>{

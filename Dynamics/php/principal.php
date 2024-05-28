@@ -25,8 +25,8 @@
                 ini_set("session.gc_maxlifetime","7200");
                 //inicio la session    
                 session_start();
-                $usuario=$_SESSION['usuario'];
                 if(isset($_SESSION['usuario'])){
+                    $usuario=$_SESSION['usuario'];
                     echo "<a href='./cerrarSesion.php' id='cerrarSesion'>Cerrar sesión $usuario</a>";
                 }else{
                     header('Location: ../../index.php');

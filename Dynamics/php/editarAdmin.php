@@ -37,11 +37,11 @@ else
     //sanitización valores
     $usuario=filter_var($usuario,FILTER_SANITIZE_STRING);
     $contrasena=filter_var($contrasena,FILTER_SANITIZE_STRING);
-    $contrasenaNueva=filter_var($contrasena,FILTER_SANITIZE_STRING);
+    $contrasenaNueva=filter_var($contrasenaNueva,FILTER_SANITIZE_STRING);
     //regex
-    $usuarioR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12})?$/i', $usuario);
-    $contrasenaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasena);
-    $contrasenaNuevaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasenaNueva);
+    $usuarioR=preg_match('/^AdminP9T[1-100]+$/i', $usuario);
+    $contrasenaR=preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/', $contrasena);
+    $contrasenaNuevaR=preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/', $contrasenaNueva);
 
     if($usuarioR==0 || $contrasenaR==0 || $contrasenaNuevaR==0)
         $respuesta = array("ok"=>false, "mensaje" => "Los datos no son correctos.");
@@ -58,7 +58,7 @@ else
 
         if(($comparacion=verificarContrasena($contrasena, $sal, $hashGuardado))==false)
         {
-            $respuesta = array("ok"=>false, "mensaje" => "0");
+            $respuesta = array("ok"=>false, "mensaje" => "0", "contraNueva"=>$contrasenaNueva, "contra"=>$contrasena);
         }
         else
         {
@@ -72,7 +72,7 @@ else
             $sql1= "UPDATE administradores SET sal= '$sal1', contraseña = '$hash' WHERE Usuario = '$usuario'"; //la actualizamos
             $res=mysqli_query($conexion, $sql1);
 
-            $respuesta = array("ok"=>false, "mensaje" => "1");
+            $respuesta = array("ok"=>false, "mensaje" => "1", "contraNueva"=>$contrasenaNueva, "contra"=>$contrasena);
 
         }
     }
