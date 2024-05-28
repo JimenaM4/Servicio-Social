@@ -14,7 +14,7 @@ window.addEventListener("load", ()=>{
             console.log(datosJSON.mensaje);
             if(datosJSON.mensaje=="correcto")
                 {
-                    location.href = "./Templates/principal_admin.html";
+                    location.href = "./Dynamics/php/principalAdmin.php";
                 }
         });
     });

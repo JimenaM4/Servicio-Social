@@ -4,15 +4,15 @@ window.addEventListener("load", ()=>{
     const contrasena = document.getElementById("user4");
 
     crear.addEventListener("click", ()=>{
-        location.href="./crearAdmin.html";
+        location.href="../php/crearAdminVista.php";
     });
 
     borrar.addEventListener("click", ()=>{
-        location.href="./borrarAdmin.html";
+        location.href="../php/borrarAdminVista.php";
     });
 
     contrasena.addEventListener("click", ()=>{
-        location.href="./cambiarContrasena.html"
+        location.href="../php/cambiarContrasena.php"
     });
     
 });
