@@ -28,10 +28,9 @@
                 if(isset($_SESSION['usuario'])){
                     $usuario=$_SESSION['usuario'];
                     echo "<a href='./cerrarSesionAdmin.php' id='cerrarSesion'>Cerrar sesión $usuario</a>";
+                }else{
+                    header('Location: ../../indexAdmin.php');
                 }
-                // else{
-                //     header('Location: ../../indexAdmin.php');
-                // }
             ?>
             <div id="busqueda"><input id="texto_busqueda" type="text" placeholder="Búsqueda"></div>
             <div id="lupa"><img src="../../Statics/media/img/lupa.png" alt="lupa" id="img_lupa"></div>
