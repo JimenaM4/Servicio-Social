@@ -1,15 +1,17 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(../media/img/fondoPrepa.jpg);
+    background-size: cover;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position:left;
+}
+
+
 .texto{
     font-size: 1.5rem;
 }
 #crear{
-    width: min-content;
-    height: min-content;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    opacity:0.9;
-    background-color: #9b8baf;
-}
-#borrar{
     width: min-content;
     height: min-content;
     padding: 1.5rem;
@@ -58,3 +60,98 @@ fieldset{
     background-color: #d2bced;
     align-self: center;
 }
+
+/* --------------------------------------------------------------------- */
+/* --------------------------------BORRAR------------------------------- */
+.borrar{
+    width: 70%;
+    height: 25rem;
+    margin: auto;
+    overflow-y: scroll;
+    margin-top: 2.5%; 
+    background: #9B8BAF;
+    opacity:0.9;
+    padding: 20px 30px;
+    border-radius: 15px;
+    color: black
+}
+
+.form_borrar h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    height: 40px;
+    font-size: 30px;
+    border-bottom:1px solid #ffffff;
+    color: black;
+    
+}
+
+#administrador{
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: auto 40rem auto;
+    align-items: center;
+    opacity: 1;
+}
+
+.imagen
+{
+    width:4rem;
+    height: 4rem;
+    border-radius: 100%;
+    background-color: aquamarine;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.texto_borrar h5{
+    font-weight: normal;
+    color:#797979;
+}
+
+.btn_borrar{
+    align-self: right;
+    margin-right: 25px;
+    height:min-content;
+    width: min-content;
+    border-radius: 20px;
+    border-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    background-color: #EB3F3F;
+    color: #ffffff; 
+}
+
+.btn_borrar:hover{
+    background-color: #ff0000;
+}
+
+
+.borrar::-webkit-scrollbar {
+    width: 12px; 
+    margin: 100px;
+}
+
+.borrar::-webkit-scrollbar-track {
+    background: #D4C6D9; 
+    border-radius: 10px;
+}
+
+.borrar::-webkit-scrollbar-thumb {
+    background-color: #785E98; 
+    border-radius: 10px; 
+    border: 3px solid #e0e0e0; 
+}
+
+.borrar::-webkit-scrollbar-thumb:hover {
+    background-color: #714c9e; /* Color of the scrollbar thumb on hover */
+}
+
+
+

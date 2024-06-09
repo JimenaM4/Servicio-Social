@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../libs/bootstrap-5.3.0-dist/css/bootstrap.css">
     <link rel="shortcut icon" href="../../Statics/media/img/favicon.png" type="image/png"> 
     <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
-    <script src="../../Dynamics/js/borrarAdmin.js"></script>
     <favicon href="../../Statics/media/img/favicon.png" type="image/x-icon">
 </head>
 <body>
@@ -26,24 +25,36 @@
             </div>
         </nav>
     </header>
-    <div id="formulario">
+    <div id="modaldiv">
+        <div id="Modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText"></p>
+            </div>
+    </div>
+    <div class="borrar">
         <form id="borrar">
-            <fieldset>
-                <legend class="texto">Borrar Administrador</legend>
-                <label class="texto">Usuario:
-                    <input id="usuario" name="usuario" type="text">
-                </label>
-                <br>
-                <label class="texto">Constraseña:
-                    <input id="contrasena" name="contrasena" type="password">
-                </label>
-                <br>
-                <button class="texto" id="enviar" name="enviar" type="submit">Borrar</button>
-            </fieldset>
+            <div class="form_borrar">
+                <h1>Borrar Administrador(es)</h1>
+                
+                    <article id="container">
+                        <div id="id_admin" style="display:none;"></div>
+                        <!-- <div id="administrador"></div> -->
+                        <!-- <img src=".jpg" class="imagen">
+                        <element class="texto_borrar">
+                            <h3>Luis Perez</h3>
+                            <h5>12345678</h5>
+                        </element>
+                        <button class="btn_borrar" >Borrar</button> -->
+                    </article>
+
+            </div>
         </form>
+        
     </div>
     <footer id="pie-pagina">
         <!-- <p>© 2021 Portal de tutorias</p> -->
     </footer>
+    <script src="../js/borrarAdmin.js"></script>
 </body>
 </html>
