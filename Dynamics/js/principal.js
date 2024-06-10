@@ -1,7 +1,4 @@
 window.addEventListener("load", ()=>{
-    const crear = document.getElementById("user2");
-    const borrar = document.getElementById("user3");
-    const contrasena = document.getElementById("user4");
     const mas = document.getElementById("mas");
     const barraMas = document.createElement("div");
     const btnCerrar = document.createElement("btn");
@@ -42,27 +39,14 @@ window.addEventListener("load", ()=>{
 
     btnCerrar.addEventListener("click", (e)=>{
         e.preventDefault();
-        fetch("./cerrarSesionAdmin.php")
+        fetch("./cerrarSesion.php")
         .then((respuesta)=>{
             return respuesta.json();
         }).then((datosJSON)=>{
             if(datosJSON.mensaje == "Sesion cerrada correctamente")
                 {
-                    location.href = "../../indexAdmin.php";
+                    location.href = "../../index.php";
                 }
         })
     });
-
-    crear.addEventListener("click", ()=>{
-        location.href="../php/crearAdminVista.php";
-    });
-
-    borrar.addEventListener("click", ()=>{
-        location.href="../php/borrarAdminVista.php";
-    });
-
-    contrasena.addEventListener("click", ()=>{
-        location.href="../php/cambiarContrasena.php"
-    });
-    
 });
