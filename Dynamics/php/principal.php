@@ -10,7 +10,7 @@
     <script src="../js/principal.js"></script>
     <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body id="body">
     <header>
         <div id="logos">
             <img src="../../Statics/media/img/escudo_unam.png" alt="escudo unam" id="unam">
@@ -27,7 +27,6 @@
                 session_start();
                 if(isset($_SESSION['usuario'])){
                     $usuario=$_SESSION['usuario'];
-                    echo "<a href='./cerrarSesion.php' id='cerrarSesion'>Cerrar sesión $usuario</a>";
                 }else{
                     header('Location: ../../index.php');
                 }
@@ -35,7 +34,7 @@
             <div id="busqueda"><input id="texto_busqueda" type="text" placeholder="Búsqueda"></div>
             <div id="lupa"><img src="../../Statics/media/img/lupa.png" alt="lupa" id="img_lupa"></div>
         </div>
-        <div id="mas"><p id="simbolo_mas">≡</p></div>
+        <div id="mas" data-valor="0"><p id="simbolo_mas">≡</p></div>
     </header>
     <main>
         <section id="fondo-carrusel">
