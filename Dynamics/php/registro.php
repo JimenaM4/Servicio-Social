@@ -15,7 +15,7 @@
     $asignatura=(isset($_POST['asignatura']) && $_POST["asignatura"] != "")? $_POST['asignatura'] : false;
     $usuario=(isset($_POST['usuario']) && $_POST["usuario"] != "")? $_POST['usuario'] : false;
     $clave=(isset($_POST['asignatura']) && $_POST["asignatura"]!="")? $_POST['asignatura']:false;
-    $ciclo=date("Y");
+    $ciclo=date("Y"); 
     $respuesta = [];
     if ($usuario == "1"){
         //sanitizar los valores
@@ -49,23 +49,35 @@
             $respuesta = array("ok"=>false, "mensaje" => "Los datos no son correctos");
         }
         else{
+            $conexion = connect ();
             if(!$conexion)
             {
                 echo "No se puedo conectar la base";
             }else{
-                $sql = "INSERT INTO alumno (noCuenta, idGrupo, nombre, aPaterno, aMaterno, correo, fechaNacimiento, ciclo) VALUES ($numCuenta, {$idGrupo['idGrupo']}, '$nombre', '$apePat', '$apeMat', '$correo', '$fechaNac', $ciclo)";
-                $res = mysqli_query($conexion, $sql);
-                if(!$res)
-                {
-                    $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el alumno");
-                } else{
-                    $respuesta = array("ok"=>true, "mensaje" => "Alumno registrado correctamente");
+                $checkQuery = "SELECT noCuenta FROM alumno WHERE noCuenta = ?";
+                $checkStmt = mysqli_prepare($conexion, $checkQuery);
+                mysqli_stmt_bind_param($checkStmt, "i", $numCuenta);
+                mysqli_stmt_execute($checkStmt);
+                mysqli_stmt_store_result($checkStmt);
+
+                if (mysqli_stmt_num_rows($checkStmt) > 0) {
+                    // el usuario ya existe
+                    $respuesta = array("ok" => false, "mensaje" => "El usuario ya existe");
+                } else {
+                    $sql = "INSERT INTO alumno (noCuenta, idGrupo, nombre, aPaterno, aMaterno, correo, fechaNacimiento, ciclo) VALUES ($numCuenta, {$idGrupo['idGrupo']}, '$nombre', '$apePat', '$apeMat', '$correo', '$fechaNac', $ciclo)";
+                    $res = mysqli_query($conexion, $sql);
+                    if(!$res)
+                    {
+                        $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el alumno");
+                    } else{
+                        $respuesta = array("ok"=>true, "mensaje" => "Registrado correctamente");
+                    }
                 }
             }
-            $respuesta = array("ok"=>true, "mensaje" => "Alumno registrado correctamente");
         }
-       
+        echo json_encode($respuesta);
     }
+    
     if ($usuario == "2"){
         //sanitizar los valores
         $RFC = filter_var($RFC, FILTER_SANITIZE_STRING);
@@ -91,17 +103,28 @@
             {
                 echo "No se puedo conectar la base";
             }else{
-                $sql =  "INSERT INTO profesores (rfc, nombre, aPaterno, aMaterno, correo, noTrabajador) VALUES ('$RFC', '$nombre', '$apePat', '$apeMat', '$correo', $numTrab)";
-                $res = mysqli_query($conexion, $sql);
-                if(!$res)
-                {
-                    $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el profesor");
-                } else{
-                    $respuesta = array("ok"=>true, "mensaje" => "Profesor registrado correctamente");
+                $checkQuery = "SELECT rfc FROM profesores WHERE rfc = ?";
+                $checkStmt = mysqli_prepare($conexion, $checkQuery);
+                mysqli_stmt_bind_param($checkStmt, "s", $RFC);
+                mysqli_stmt_execute($checkStmt);
+                mysqli_stmt_store_result($checkStmt);
+                
+                if (mysqli_stmt_num_rows($checkStmt) > 0) {
+                    // el usuario ya existe
+                    $respuesta = array("ok" => false, "mensaje" => "El usuario ya existe");
+                } else {
+                    $sql = "INSERT INTO profesores (rfc, nombre, aPaterno, aMaterno, correo, noTrabajador) VALUES ('$RFC', '$nombre', '$apePat', '$apeMat', '$correo', $numTrab)";
+                    $res = mysqli_query($conexion, $sql);
+                    if(!$res)
+                    {
+                        $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el profesor");
+                    } else{
+                        $respuesta = array("ok"=>true, "mensaje" => "Registrado correctamente");
+                    }
                 }
             }
-            $respuesta = array("ok"=>true, "mensaje" => "Profesor registrado correctamente");
         }
+        echo json_encode($respuesta);
     }
     if ($usuario == "3"){
         //sanitizar los valores
@@ -136,17 +159,33 @@
             {
                 echo "No se puedo conectar la base";
             }else{
-                $sql =  "INSERT INTO tutores (idTutor, rfc, idGrupo, idAsignatura, ciclo) VALUES (NULL, '$RFC', {$idGrupo['idGrupo']}, {$idAsignatura['idAsignatura']}, $ciclo)";
-                $res = mysqli_query($conexion, $sql);
-                if(!$res)
-                {
-                    $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el tutor");
-                } else{
-                    $respuesta = array("ok"=>true, "mensaje" => "Tutor registrado correctamente");
+                //los tutores pueden tener registrados varios grupos en diferentes ciclos, pero no pueden tener duplicado el mismo grupo en el mismo ciclo.
+                $checkQuery = "SELECT rfc FROM tutores WHERE rfc = ? AND idGrupo = ? AND ciclo = ?";
+                $checkStmt = mysqli_prepare($conexion, $checkQuery);
+                mysqli_stmt_bind_param($checkStmt, "sii", $RFC, $idGrupo['idGrupo'], $ciclo);
+                mysqli_stmt_execute($checkStmt);
+                mysqli_stmt_store_result($checkStmt);
+
+                // $checkStmt = mysqli_prepare($conexion, $checkQuery);
+                // mysqli_stmt_bind_param($checkStmt, "s", $RFC);
+                // mysqli_stmt_execute($checkStmt);
+                // mysqli_stmt_store_result($checkStmt);
+
+                if (mysqli_stmt_num_rows($checkStmt) > 0) {
+                    // el usuario ya existe
+                    $respuesta = array("ok" => false, "mensaje" => "Tutor ya registrado");
+                } else {
+                    $sql =  "INSERT INTO tutores (idTutor, rfc, idGrupo, idAsignatura, ciclo) VALUES (NULL, '$RFC', {$idGrupo['idGrupo']}, {$idAsignatura['idAsignatura']}, $ciclo)";
+                    $res = mysqli_query($conexion, $sql);
+                    if(!$res)
+                    {
+                        $respuesta = array("ok"=>false, "mensaje" => "No se pudo añadir el tutor");
+                    } else{
+                        $respuesta = array("ok"=>true, "mensaje" => "Registrado correctamente");
+                    }
                 }
             }
-            $respuesta = array("ok"=>true, "mensaje" => "Tutor registrado correctamente");
         }
+        echo json_encode($respuesta);
     }
-    echo json_encode($respuesta);
 ?>

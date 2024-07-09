@@ -33,9 +33,7 @@
     $usuario=filter_var($usuario,FILTER_SANITIZE_STRING);
     $contrasena=filter_var($contrasena,FILTER_SANITIZE_STRING);
     //regex
-    // $usuarioR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12})?$/i', $usuario);
-    $usuarioR = preg_match('/^AdminP9T[1-100]+$/i', $usuario);
-    // $contrasenaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasena);
+    $usuarioR = preg_match('/^AdminP9T\d+$/', $usuario);
     $contrasenaR=preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/', $contrasena);
 
     if($contrasenaR==0||$usuarioR==0)
@@ -53,13 +51,19 @@
         mysqli_stmt_execute($stmt);
         $res = mysqli_stmt_get_result($stmt);
         $resp = mysqli_fetch_assoc($res);
+
+        if (!$resp) {
+            $respuesta = [
+                "mensaje" => "El usuario no existe"
+            ];
+        }else{
         $sal=$resp['sal'];
         $hashGuardado=$resp['contraseña'];
-
+        
         if(($comparacion=verificarContrasena($contrasena, $sal, $hashGuardado))==false)
         {
             $respuesta=[
-                "mensaje" => "Error con la contraseña"
+                "mensaje" => "La contraseña es incorrecta"
             ];
         }
         else{
@@ -68,7 +72,7 @@
             if(!$res)
             {
                 $respuesta =[
-                    "mensaje" => "Usuario o contraseña equivocado"
+                    "mensaje" => "Usuario o contraseña incorrectos, compruebe los datos"
                 ];
             } 
             else
@@ -77,14 +81,6 @@
                 {
                     session_start();
                     $_SESSION['usuario'] = $usuario;
-                    // //seteo la vida de la session en 7200 segundos    
-                    // ini_set("session.cookie_lifetime","7200");
-                    // //seteo el maximo tiempo de vida de la session
-                    // ini_set("session.gc_maxlifetime","7200");
-                    // //inicio la session  
-                    // session_start();
-                    // $_SESSION['usuario'] = $row['usuario'];
-                    // $_SESSION['id'] = $row['idAdmin'];
                 }
                 $respuesta=[
                     "usuario" => $usuario,
@@ -94,6 +90,7 @@
             }
         }
     }
+}
     echo json_encode($respuesta);
 ?>
 

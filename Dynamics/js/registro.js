@@ -13,7 +13,7 @@ window.addEventListener("load",()=>{
     const asignatura = document.getElementById("asignatura");
     const btnRegistro = document.getElementById("btnRegistrarse");
     const formRegis = document.getElementById("formRegis");
-    const form = document.getElementById("form");
+    const form = document.getElementById("form"); 
 
     function ocultar() {//funcion para ocultar los elementos
         var elements = [nombre, apellidoPat, apellidoMat, correo, numTrabajador, btnRegistro, numCuenta, fechaNacimiento, grupo, asignatura, RFC];
@@ -64,48 +64,40 @@ window.addEventListener("load",()=>{
         }
     });
 
-    function testRegex(value, regex, message) {
-        if (!regex.test(value)) {
-            var modal = document.getElementById("Modal");
-            var span = document.getElementsByClassName("close")[0];
-            document.getElementById("modalText").innerText = message;
-            modal.style.display = "block";
-            span.onclick = function() {
+    function mostrarModal(mensaje) {//funcion para mostrar el modal
+        var modal = document.getElementById("Modal");
+        var span = document.getElementsByClassName("close")[0];
+        document.getElementById("modalText").innerText = mensaje;
+        modal.style.display = "block";
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+        }
+    }
+
+    function testRegex(value, regex, message) {//funcion para verificar que el valor cumpla con el regex y en caso que no, mostrar el modal
+        if (!regex.test(value)) {
+            mostrarModal(message);
             return false;
         }
         return true;
     }
 
     function testResultados(results, usuario) {//funcion para verificar que todos los resultados sean true
-        if (usuario == "1" && results.length == 6) {
+        if (usuario == "1"||"2"||"3")
+        {
             for (let i = 0; i < results.length; i++) {
                 if (!results[i]) {
                     return false;
-                }
+                }else{
+                    return true;
+                }  
             }
         }
-        if (usuario == "2" && results.length == 5) {
-            for (let i = 0; i < results.length; i++) {
-                if (!results[i]) {
-                    return false;
-                }
-            }
-        }
-        if (usuario == "3" && results.length == 4) {
-            for (let i = 0; i < results.length; i++) {
-                if (!results[i]) {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     btnRegistro.addEventListener('click', (e) => {
@@ -145,18 +137,15 @@ window.addEventListener("load",()=>{
             .then((respuesta)=>{
                 return respuesta.json();
             }).then((datosJSON)=>{
-                console.log(datosJSON.mensaje);
-                nombre.value = "";
-                apellidoPat.value = "";
-                apellidoMat.value = "";
-                correo.value = "";
-                numTrabajador.value = "";
-                numCuenta.value = "";
-                fechaNacimiento.value = "";
-                grupo.value = "";
-                asignatura.value = "";
-                RFC.value = "";
-                window.location.href = "../index.php";
+                if (datosJSON.mensaje == "Registrado correctamente") {
+                    window.location.href = "../index.php";  
+                }
+                else if(datosJSON.mensaje == "El usuario ya existe"){
+                    mostrarModal("El usuario ya existe, verifica los datos o inicia sesión");  
+                                    
+                } else if(datosJSON.mensaje == "Tutor ya registrado"){
+                    mostrarModal("Tutor ya registrado en este grupo y ciclo escolar, verifica los datos o inicia sesión");
+                }
             });
             
         } else {

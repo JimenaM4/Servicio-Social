@@ -39,48 +39,39 @@ window.addEventListener("load",()=>{
         }
     });
 
-    function testRegex(value, regex, message) {
-        if (!regex.test(value)) {
-            var modal = document.getElementById("Modal");
-            var span = document.getElementsByClassName("close")[0];
-            document.getElementById("modalText").innerText = message;
-            modal.style.display = "block";
-            span.onclick = function() {
+    function mostrarModal(mensaje) {//funcion para mostrar el modal
+        var modal = document.getElementById("Modal");
+        var span = document.getElementsByClassName("close")[0];
+        document.getElementById("modalText").innerText = mensaje;
+        modal.style.display = "block";
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+        }
+    }
+
+    function testRegex(value, regex, message) {
+        if (!regex.test(value)) {
+            mostrarModal(message);
             return false;
         }
         return true;
     }
 
     function testResultados(results, usuario) {//funcion para verificar que todos los resultados sean true
-        if (tipoUsuario == "1" && results.length == 2) {
+        if ((tipoUsuario == "1" || "2" ||"3") && results.length == 4) {
             for (let i = 0; i < results.length; i++) {
                 if (!results[i]) {
                     return false;
+                }else{
+                    return true;
                 }
-            }
+            } 
         }
-        if (tipoUsuario == "2" && results.length == 2) {
-            for (let i = 0; i < results.length; i++) {
-                if (!results[i]) {
-                    return false;
-                }
-            }
-        }
-        if (tipoUsuario == "3" && results.length == 2) {
-            for (let i = 0; i < results.length; i++) {
-                if (!results[i]) {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     btnIniciarSesion.addEventListener('click', (e) => {
@@ -88,7 +79,7 @@ window.addEventListener("load",()=>{
         let results = []; //array para guardar los resultados de los regex
         if (tipoUsuario.value == "1") {
             results.push(testRegex(usuario.value, /^[0-9]{9}$/i, "Número de cuenta inválido, verifica que contenga 9 dígitos, sin espacios ni guiones"), 1);
-            results.push(testRegex(contrasena.value, /^[0-9]{8}$/i, "Fecha de nacimiento inválida, verifica que sea una fecha válida"), 1);
+            results.push(testRegex(contrasena.value, /^[0-9]{8}$/i, "Fecha de nacimiento inválida, verifica que tenga el siguiente formato: aaaammdd"), 1);
         }
         if (tipoUsuario.value == "2") {    
             results.push(testRegex(contrasena.value, /^[0-9]{5,6}$/i, "Número de trabajador inválido, verifica que contenga de 5 a 6 dígitos, sin espacios ni guiones"), 2);
@@ -124,19 +115,8 @@ window.addEventListener("load",()=>{
                     window.location.href = "./dynamics/php/principal_tutor.php";
                 }
                 else
-                {
-                    var modal = document.getElementById("Modal");
-                    var span = document.getElementsByClassName("close")[0];
-                    document.getElementById("modalText").innerText = "Usuario o contraseña incorrectos";
-                    modal.style.display = "block";
-                    span.onclick = function() {
-                        modal.style.display = "none";
-                    }
-                    window.onclick = function(event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
+                { 
+                    mostrarModal("El usuario no existe, verifica los datos");
                 }
             });
             

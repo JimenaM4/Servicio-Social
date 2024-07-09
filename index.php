@@ -11,7 +11,7 @@
     <script src="./libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
     <script src=".\Dynamics\js\inicioSesion.js"></script>
     <favicon href="./Statics/media/img/favicon.png" type="image/x-icon">
-</head>
+</head> 
 <body>
     <!-- Barra de navegación -->
     <header id="barra">
