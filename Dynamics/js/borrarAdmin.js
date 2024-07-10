@@ -1,5 +1,10 @@
 window.addEventListener("load", (e)=>{
     e.preventDefault();
+    var modal = document.getElementById("confirmationModal");
+    var span = document.getElementsByClassName("close")[0];
+    var confirmBtn = document.getElementById("confirmacion");
+    var cancelBtn = document.getElementById("cancelar");
+
     fetch("./borrarAdminDB.php")
     .then((respuesta)=>{
         return respuesta.json();
@@ -8,9 +13,6 @@ window.addEventListener("load", (e)=>{
         const div = document.getElementById("container");
         const id = document.getElementById("id_admin");
         console.log(datosJSON);
-        // console.log(datosJSON[0].Nombre);
-        //let datos=[datosJSON.Foto, datosJSON.Nombre];
-        // for(dato of datosJSON){
         datosJSON.forEach(function(element)
         {
             console.log(element);
@@ -32,23 +34,22 @@ window.addEventListener("load", (e)=>{
                 </div>
             `;
             id.id = element.id;
-            // console.log(id.id);
         })
-
-        // div.addEventListener("click",(e)=>
-        // {
-        //     let id = e.target.dataset.id;
-        //     console.log(id)
-        //     document.cookie = "producto=" + id + ";max-age=3600;";
-        //     //window.location.href="../php/registro.php";
-        // });
         
         const botonesBorrar = document.querySelectorAll(".btn_borrar");
         botonesBorrar.forEach((boton) => {
             boton.addEventListener("click", (e) => {
-                
-                var confirmacion = window.confirm("¿Está segur@ que desea eliminar a este administrador permanentemente?");
-                if (confirmacion == true) {
+                console.log(borrar );
+                e.preventDefault();
+                modal.style.display = "block";//muestra el modal
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }//cierra el modal, sin confirmar la eliminación
+
+                confirmBtn.onclick = function() {
+                    console.log("Confirmado");
+                    modal.style.display = "none";
                     datosForm = new FormData();
                     datosForm.append("idAdmin",id.id);
                     fetch("./borrarAdmin.php", {
@@ -58,22 +59,19 @@ window.addEventListener("load", (e)=>{
                     .then((respuesta)=>{
                         return respuesta.json();
                     }).then((datosJSON)=>{ 
-                        alert("Ok");
+                        console.log(datosJSON.mensaje);
+                        if (datosJSON.mensaje == "Administrador borrado") {
+                            console.log("Usuario eliminado");
+                            location.reload();
+                        }
                     });
-                }
-            });
-        });
+                }//cierra el modal, confirmando la eliminación, elimina el usuario y recarga la página
 
-        // const borrar = document.getElementById("btnBorrar");
-        // borrar.addEventListener("click",(e)=>
-        // {
-        //     console.log("hola");
-        //     var confirmacion = window.confirm("¿Está segur@ que desea eliminar a este administrador permanentemente?");
-        //     if (confirmacion == true){
-        //         alert("Ok");
-        //     }
-        // });
-        //borrar.addEventListener("click",(e)=>{window.location.href="../index.php";});    
+                cancelBtn.onclick = function() {
+                    modal.style.display = "none";
+                }//cierra el modal, cancelando la eliminación
+            });
+        });    
     });
 
 });

@@ -30,11 +30,12 @@
         } 
         else
         {
-            $respuesta=[
-                "usuario" => $usuario,
-                "contrasena" => $contrasena,
-                "mensaje" => "Administrador borrado"
-            ];
+            // $respuesta=[
+            //     "usuario" => $usuario,
+            //     "contrasena" => $contrasena,
+            //     "mensaje" => "Administrador borrado"
+            // ];
+            $respuesta = array("ok"=>true, "mensaje" => "Administrador borrado");
         }
     //}
     echo json_encode($respuesta);

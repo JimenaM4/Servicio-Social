@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="../../Statics/media/img/favicon.png" type="image/png"> 
     <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
     <favicon href="../../Statics/media/img/favicon.png" type="image/x-icon">
+    <script src="../js/borrarAdmin.js"></script>
 </head>
 <body>
     <header id="barra">
@@ -25,14 +26,16 @@
             </div>
         </nav>
     </header>
-    <div id="modaldiv">
-        <div id="Modal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p id="modalText"></p>
-            </div>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="modal_text">Confirmación</h3>
+            <p class="modal_text" >¿Está seguro que desea eliminar a este administrador permanentemente?</p>
+            <button id="confirmacion" class="boton_modal">Eliminar</button>
+            <button id="cancelar" class="boton_modal">Cancelar</button>
+        </div>
     </div>
-    <div class="borrar">
+    <div class="borrar"> 
         <form id="borrar">
             <div class="form_borrar">
                 <h1>Borrar Administrador(es)</h1>
@@ -55,6 +58,5 @@
     <footer id="pie-pagina">
         <!-- <p>© 2021 Portal de tutorias</p> -->
     </footer>
-    <script src="../js/borrarAdmin.js"></script>
 </body>
 </html>

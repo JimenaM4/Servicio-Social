@@ -85,7 +85,6 @@ header{
     height: auto; /* Mantiene la relación de aspecto */
 }
 
-
 #mas{
     height: 70%;
     width: 8%;
@@ -96,6 +95,7 @@ header{
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     
 }
 #simbolo_mas{
@@ -103,8 +103,31 @@ header{
     color: #ffffff;
     /* line-height: 0; */
 }
-
-
+#barraMas{
+    width: 14vw;
+    height: 20vh;
+    padding: 0.5rem;
+    position: absolute;
+    top: 7rem;
+    right: 0.5rem;
+    background-color: #9B8BAF;
+    z-index: 9998;
+}
+#btnCerrar{
+    width: 8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 1rem;
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    background-color: #7255A3;
+}
+#btnCerrar:hover{
+    background-color: #4f366e;
+}
 #fondo-carrusel
 {
     background-color: #E9DFF6;
@@ -269,15 +292,19 @@ p{
 #user1{
     background-color: #4662d078;
     font-weight: bold;
+    cursor: pointer;
 }
 #user2{
     background-color: #53629c90;
+    cursor: pointer;
 }
 #user3{
     background-color: #53629c70;
+    cursor: pointer;
 }
 #user4{
     background-color: #53629c48;
+    cursor: pointer;
 }
 
 #recursos_admi{

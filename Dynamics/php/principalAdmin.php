@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../libs/bootstrap-5.3.0-dist/css/bootstrap.min.css">
     <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../Dynamics/js/admin.js"></script>
-</head>
+</head> 
 <body id="body">
     <header>
         <div id="logos">

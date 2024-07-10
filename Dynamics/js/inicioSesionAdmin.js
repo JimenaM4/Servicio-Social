@@ -27,17 +27,14 @@ window.addEventListener("load", ()=>{
         // Regex 
         var usuarioRegex = /^AdminP9T\d+$/; // ejemplo: AdminP9T1
         var contrasenaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/; // ejemplo: MyP@ssw0rd!
-
         // Test usuario
         if (!testRegex(usuario, usuarioRegex, "Verifica que el usuario sea correcto.")) {
             return false;
         }
-    
         // Test contrasena
         if (!testRegex(contrasena, contrasenaRegex, "Verifica que la contraseña sea correcta.")) {
             return false;
         }
-    
         return true;
     }
     

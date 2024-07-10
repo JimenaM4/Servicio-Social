@@ -1,6 +1,6 @@
 <?php
     require "config.php";
-    $conexion=connect();
+    $conexion=connect(); 
     //obtención valores
     $usuario=(isset($_POST["usuario"])&&$_POST["usuario"]!="")?$_POST["usuario"]:false;
     $contrasena=(isset($_POST["contrasena"])&&$_POST["contrasena"]!="")?$_POST["contrasena"]:false;
@@ -10,7 +10,7 @@
     $contrasena=filter_var($contrasena,FILTER_SANITIZE_STRING);
     //regex
     // $usuarioR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,12})?$/i', $usuario);
-    $usuarioR = preg_match('/^AdminP9T[1-100]+$/i', $usuario);
+    $usuarioR = preg_match('/^AdminP9T\d+$/', $usuario);
     // $contrasenaR=preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250}( [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{1,250})?$/i', $contrasena);
     $contrasenaR=preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[^\s]{10,20}$/', $contrasena);
     if($contrasenaR==0||$usuarioR==0)

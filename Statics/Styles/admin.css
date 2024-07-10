@@ -73,7 +73,7 @@ fieldset{
     opacity:0.9;
     padding: 20px 30px;
     border-radius: 15px;
-    color: black
+    color: black;
 }
 
 .form_borrar h1 {
@@ -150,8 +150,68 @@ fieldset{
 }
 
 .borrar::-webkit-scrollbar-thumb:hover {
-    background-color: #714c9e; /* Color of the scrollbar thumb on hover */
+    background-color: #714c9e; 
 }
 
+/* --------------------------------------------------------------------- */
+/* --------------------------------MODAL-------------------------------- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 10%; 
+    height: 50%; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: auto; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton_modal{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 10%;
+    border: none;
+    display: inline-block;
+}
+
+#cancelar{
+    background-color: #444cde;
+    color: white;
+}
+
+#confirmacion{
+    background-color: #ce3838;
+    color: white;
+}
+
+.modal_text{
+    display: flex;
+}
+
+/* --------------------------------------------------------------------- */
 
 

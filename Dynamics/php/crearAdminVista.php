@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Administrador</title>
     <link rel="stylesheet" href="../../Statics/Styles/inicioSesion.css">
-    <link rel="stylesheet" href="../../Statics/Styles/admin.css">
     <link rel="stylesheet" href="../../libs/bootstrap-5.3.0-dist/css/bootstrap.css">
     <link rel="shortcut icon" href="../../Statics/media/img/favicon.png" type="image/png"> 
     <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
-    <script src="../../Dynamics/js/crearAdmin.js"></script>
+    <script src="../js/crearAdmin.js"></script>
     <favicon href="../../Statics/media/img/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body> 
+    <div id="modaldiv">
+        <div id="Modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText"></p>
+            </div>
+    </div>
     <header id="barra">
         <nav id="navbar">
             <div>
@@ -26,20 +32,18 @@
             </div>
         </nav>
     </header>
-    <div id="formulario">
-        <form id="crear">
-            <fieldset>
-                <legend class="texto">Crear Administrador</legend>
-                <label class="texto">Usuario:
-                    <input id="usuario" name="usuario" type="text">
-                </label>
-                <br>
-                <label class="texto">Constraseña:
-                    <input id="contrasena" name="contrasena" type="password">
-                </label>
-                <br>
-                <button class="texto" id="enviar" name="enviar" type="submit">Crear</button>
-            </fieldset>
+    <div id="cuerpo">
+        <div id="contenido"> 
+            <form id="crear">
+                <div class="form_inicio">
+                    <h1>Crear Administrador</h1>
+                    <input class="datos" type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                    <input class="datos" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    <button  class="button" id="enviar" name="enviar" type="submit">
+                        Crear
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
     <footer id="pie-pagina">

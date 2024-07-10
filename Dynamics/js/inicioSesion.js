@@ -4,7 +4,7 @@ window.addEventListener("load",()=>{
     const contrasena = document.getElementById('contrasena');
     const btnIniciarSesion = document.getElementById('btnIniciarSesion');
     const inicioSesion = document.getElementById("inicioSesion");
-
+ 
     function ocultar() {
         var elements = [usuario, contrasena, btnIniciarSesion];
         for (var i = 0; i < elements.length; i++) {
@@ -37,7 +37,7 @@ window.addEventListener("load",()=>{
             usuario.placeholder = "RFC";
             contrasena.placeholder = "Número de trabajador";
         }
-    });
+    }); 
 
     function mostrarModal(mensaje) {//funcion para mostrar el modal
         var modal = document.getElementById("Modal");

@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar administrador</title>
     <link rel="stylesheet" href="../../Statics/Styles/inicioSesion.css">
-    <link rel="stylesheet" href="../../Statics/Styles/admin.css">
     <link rel="stylesheet" href="../../libs/bootstrap-5.3.0-dist/css/bootstrap.css">
     <link rel="shortcut icon" href="../../Statics/media/img/favicon.png" type="image/png"> 
-    <script src="../../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
-    <script src="../../Dynamics/js/editarAdmin.js"></script>
+    <script src="../libs/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+    <script src="../js/editarAdmin.js"></script>
     <favicon href="../../Statics/media/img/favicon.png" type="image/x-icon">
-</head>
-<body>
+</head> 
+<body> 
     <header id="barra">
         <nav id="navbar">
             <div>
@@ -26,26 +25,27 @@
             </div>
         </nav>
     </header>
-    <div id="formulario">
-        <form id="cambiar" method="post" target="_self" action="../Dynamics/php/editarAdmin.php">
-            <fieldset id="centrar">
-                <legend class="texto">Editar contraseña</legend>
-                <label class="texto">Usuario:
-                    <input id="usuario" name="usuario" type="text">
-                </label>
-                <br>
-                <label class="texto">Constraseña:
-                    <input id="contrasena" name="contrasena" type="password">
-                </label>
-                <br>
-                <label class="texto">Contraseña nueva:
-                    <input id="contrasena" name="contrasenaNew" type="password">
-                </label>
-                <br>
-                <button class="texto" id="enviar" name="enviar" type="submit">Listo</button>
-            </fieldset>
-        </form>
+    <div id="modaldiv">
+        <div id="Modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText"></p>
+            </div>
     </div>
+    <div id="cuerpo">
+        <div id="contenido"> 
+        <form id="cambiar" method="post" target="_self" action="../Dynamics/php/editarAdmin.php">
+            <div class="form_inicio">
+                <h1>Editar contraseña</h1>
+                <input class="datos" type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                <input class="datos" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <input class="datos" type="password" id="contrasenaNueva" name="contrasenaNew" placeholder="Nueva contraseña" required>
+                <button class="button" id="enviar" type="submit">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+        </form>
     <footer id="pie-pagina">
         <!-- <p>© 2021 Portal de tutorias</p> -->
     </footer>

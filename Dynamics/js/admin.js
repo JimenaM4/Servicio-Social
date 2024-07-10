@@ -6,24 +6,10 @@ window.addEventListener("load", ()=>{
     const barraMas = document.createElement("div");
     const btnCerrar = document.createElement("btn");
     const body = document.getElementById("body");
-
-    barraMas.setAttribute("id","barraMas");
-    barraMas.style.width = "25vw";
-    barraMas.style.height = "42vh";
-    barraMas.style.padding = "0.5rem";
-    barraMas.style.position = "absolute";
-    barraMas.style.top = "7rem";
-    barraMas.style.right = "0rem";
-    barraMas.style.backgroundColor = "#9B8BAF";
-    barraMas.style.zIndex = "9998";
-    // barraMas.style.position = ""
+ 
+    barraMas.setAttribute("id","barraMas"); 
     btnCerrar.setAttribute("id","btnCerrar");
-    btnCerrar.style.width = "8rem";
-    btnCerrar.style.width = "8rem";
-    btnCerrar.textContent = "Cerrar Sesion";
-    btnCerrar.style.position = "absolute";
-    btnCerrar.style.zIndex = "9999";
-    btnCerrar.style.backgroundColor = "#FFFFFF";
+    btnCerrar.textContent = " Cerrar Sesión ";
 
     mas.addEventListener("click", ()=>{
         let valor = mas.getAttribute("data-valor");

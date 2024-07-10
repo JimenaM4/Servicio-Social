@@ -5,7 +5,7 @@ function verificarContrasena($contrasena,$sal,$hashGuardado)
     for($i=0;$i<count($caracteres);$i++)
     {
         for($j=0;$j<count($caracteres);$j++)
-        {
+        { 
             for($k=0;$k<count($caracteres);$k++)
             {
                 for($l=0;$l<count($caracteres);$l++)
