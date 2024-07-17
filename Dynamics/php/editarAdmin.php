@@ -47,14 +47,14 @@ else
         $respuesta = array("ok"=>false, "mensaje" => "Los datos no son correctos.");
     else
     {
-        $sql = "SELECT contraseña, sal FROM administradores WHERE usuario=?";
+        $sql = "SELECT contrasena, sal FROM administradores WHERE usuario=?";
         $stmt = mysqli_prepare($conexion, $sql);
         mysqli_stmt_bind_param($stmt, "s", $usuario); // "i" indica que es un parámetro de tipo entero
         mysqli_stmt_execute($stmt);
         $res = mysqli_stmt_get_result($stmt);
         $resp = mysqli_fetch_assoc($res);
         $sal=$resp['sal'];
-        $hashGuardado=$resp['contraseña'];
+        $hashGuardado=$resp['contrasena'];
 
         if(($comparacion=verificarContrasena($contrasena, $sal, $hashGuardado))==false)
         {
@@ -69,7 +69,7 @@ else
             $contrasenaConSalYPimienta=$contrasenaNueva.$pimienta.$sal1;
             $hash=hash('sha256',$contrasenaConSalYPimienta); //hasheamos la nueva contraseña
 
-            $sql1= "UPDATE administradores SET sal= '$sal1', contraseña = '$hash' WHERE Usuario = '$usuario'"; //la actualizamos
+            $sql1= "UPDATE administradores SET sal= '$sal1', contrasena = '$hash' WHERE Usuario = '$usuario'"; //la actualizamos
             $res=mysqli_query($conexion, $sql1);
 
             $respuesta = array("ok"=>false, "mensaje" => "1", "contraNueva"=>$contrasenaNueva, "contra"=>$contrasena);
