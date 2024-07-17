@@ -31,7 +31,7 @@
         // $sql="INSERT INTO administradores VALUES (?,?)";
         // $stmt=mysqli_prepare($conexion,$sql);
         // mysqli_stmt_bind_param()
-        $sql="INSERT INTO administradores VALUES (0, '$usuario', '$hash', '$sal', 'no', 'no', 'no')";
+        $sql="INSERT INTO administradores VALUES (0, '$usuario', '$hash', '$sal')";
         $res=mysqli_query($conexion,$sql);
         if(!$res)
         {

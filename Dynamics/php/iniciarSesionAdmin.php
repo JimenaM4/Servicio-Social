@@ -45,7 +45,7 @@
     else
     {
         // obtener sal y hash guardados en la bd
-        $sql = "SELECT contraseña, sal FROM administradores WHERE usuario=?";
+        $sql = "SELECT contrasena, sal FROM administradores WHERE usuario=?";
         $stmt = mysqli_prepare($conexion, $sql);
         mysqli_stmt_bind_param($stmt, "s", $usuario); // "i" indica que es un parámetro de tipo entero
         mysqli_stmt_execute($stmt);
@@ -58,7 +58,7 @@
             ];
         }else{
         $sal=$resp['sal'];
-        $hashGuardado=$resp['contraseña'];
+        $hashGuardado=$resp['contrasena'];
         
         if(($comparacion=verificarContrasena($contrasena, $sal, $hashGuardado))==false)
         {
@@ -67,7 +67,7 @@
             ];
         }
         else{
-            $sql = "SELECT * FROM administradores WHERE usuario='$usuario' AND contraseña='$hashGuardado'";
+            $sql = "SELECT * FROM administradores WHERE usuario='$usuario' AND contrasena='$hashGuardado'";
             $res = mysqli_query($conexion, $sql);
             if(!$res)
             {
