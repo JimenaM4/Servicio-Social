@@ -1,0 +1,106 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(../media/img/fondoPrepa.jpg);
+    background-size: cover;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position:left;
+}
+
+
+.directorio{
+    width: 70%;
+    height: 25rem;
+    margin: auto;
+    overflow-y: auto;
+    margin-top: 2.5%; 
+    background: #9B8BAF;
+    opacity:0.92;
+    padding: 20px 30px;
+    padding-right: 20px;
+    border-radius: 15px;
+    color: black;
+}
+
+.div_directorio h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    height: 40px;
+    font-size: 34px;
+    border-bottom:1px solid #ffffff;
+    color: black;
+    
+}
+
+.sub_secciones{
+    margin: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 94% 6%;
+    align-items: center;
+}
+
+
+.btnEdit{
+    height:min-content;
+    width: min-content;
+    border-radius: 20px;
+    border-color: transparent;
+    font-weight: bold;
+    background-color: #3FADEB;
+    color: #ffffff; 
+    opacity: 1;
+}
+
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    margin: 20px;
+}
+
+
+.tarjeta{
+    width: 17rem;
+    height: 23rem;
+    background-color: #ffffff;
+    margin: 1.5rem;
+    border-radius: 10%;
+    align-items: center;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagen{
+    width: 10rem;
+    height: 10rem;
+    background-color: #3FADEB;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+
+.directorio::-webkit-scrollbar {
+    width: 12px; 
+    margin: 100px;
+}
+
+.directorio::-webkit-scrollbar-track {
+    background: #D4C6D9; 
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.directorio::-webkit-scrollbar-thumb {
+    background-color: #785E98; 
+    border-radius: 10px; 
+    border: 3px solid #e0e0e0; 
+}
+
+.directorio::-webkit-scrollbar-thumb:hover {
+    background-color: #714c9e; 
+}
