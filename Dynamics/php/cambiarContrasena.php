@@ -12,6 +12,19 @@
     <favicon href="../../Statics/media/img/favicon.png" type="image/x-icon">
 </head> 
 <body> 
+    <?php
+        //seteo la vida de la session en 7200 segundos    
+        ini_set("session.cookie_lifetime","7200");
+        //seteo el maximo tiempo de vida de la session
+        ini_set("session.gc_maxlifetime","7200");
+        //inicio la session    
+        session_start();
+        if(isset($_SESSION['usuario'])){
+            $usuario=$_SESSION['usuario'];
+        }else{
+            header('Location: ../../indexAdmin.php');
+        }
+    ?>
     <header id="barra">
         <nav id="navbar">
             <div>
