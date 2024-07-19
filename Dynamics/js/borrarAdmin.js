@@ -1,9 +1,16 @@
 window.addEventListener("load", (e)=>{
+    
     e.preventDefault();
+    const crear = document.getElementById("btnnuevo");
     var modal = document.getElementById("confirmationModal");
     var span = document.getElementsByClassName("close")[0];
     var confirmBtn = document.getElementById("confirmacion");
     var cancelBtn = document.getElementById("cancelar");
+
+    crear.addEventListener("click", ()=>{
+        location.href="../php/crearAdminVista.php";
+    });
+
 
     fetch("./borrarAdminDB.php")
     .then((respuesta)=>{
@@ -25,21 +32,25 @@ window.addEventListener("load", (e)=>{
             // </div>`;
             div.innerHTML+=`
                 <div id="administrador" >
-                    <img src=".jpg" class="imagen">
+                    <img class="imagen">
                     <element class="texto_borrar" >
                         <h3>${element.Usuario}</h3>
                         <h5>${element.NoTrabajador}</h5>
                     </element>
-                    <button id="btnBorrar" data-id="${element.id}" class="btn_borrar">Borrar</button>
+                    <element class = "botones">
+                        <button type="button" id="btnEditar" class="btn_editar" data-id="${element.id}" >Editar</button>
+                        <button type="button" id="btnBorrar" data-id="${element.id}" class="btn_borrar">Borrar</button>
+                    </element>
                 </div>
             `;
             id.id = element.id;
         })
+
         
         const botonesBorrar = document.querySelectorAll(".btn_borrar");
         botonesBorrar.forEach((boton) => {
             boton.addEventListener("click", (e) => {
-                console.log(borrar );
+                console.log("borrar");
                 e.preventDefault();
                 modal.style.display = "block";//muestra el modal
 
@@ -71,7 +82,15 @@ window.addEventListener("load", (e)=>{
                     modal.style.display = "none";
                 }//cierra el modal, cancelando la eliminación
             });
-        });    
+        });
+        
+        const botonesEditar = document.querySelectorAll(".btn_editar");
+        botonesEditar.forEach((boton) => {
+            boton.addEventListener("click", (e) => {
+                location.href = "../php/cambiarContrasena.php";
+            });
+        });
+
     });
 
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrar Administrador</title>
+    <title>Gestionar Administradores</title>
     <link rel="stylesheet" href="../../Statics/Styles/inicioSesion.css">
     <link rel="stylesheet" href="../../Statics/Styles/admin.css">
     <link rel="stylesheet" href="../../libs/bootstrap-5.3.0-dist/css/bootstrap.css">
@@ -35,10 +35,12 @@
             <button id="cancelar" class="boton_modal">Cancelar</button>
         </div>
     </div>
-    <div class="borrar"> 
-        <form id="borrar">
-            <div class="form_borrar">
-                <h1>Borrar Administrador(es)</h1>
+    <div class="admins"> 
+        <form id="admin">
+            <div class="form_admin">
+                <h1>Gestionar Administrador(es)</h1>
+
+                    <button type="button" id= "btnnuevo" class= "btn_nuevo">Nuevo administrador</button>
                 
                     <article id="container">
                         <div id="id_admin" style="display:none;"></div>
@@ -48,6 +50,8 @@
                             <h3>Luis Perez</h3>
                             <h5>12345678</h5>
                         </element>
+                         
+                        <button class="btn_editar" >Editar</button>
                         <button class="btn_borrar" >Borrar</button> -->
                     </article>
 

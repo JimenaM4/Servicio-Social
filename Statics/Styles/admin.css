@@ -11,6 +11,8 @@ body {
 .texto{
     font-size: 1.5rem;
 }
+
+
 #crear{
     width: min-content;
     height: min-content;
@@ -62,26 +64,26 @@ fieldset{
 }
 
 /* --------------------------------------------------------------------- */
-/* --------------------------------BORRAR------------------------------- */
-.borrar{
+/* --------------------------------GESTIONAR------------------------------- */
+.admins{
     width: 70%;
     height: 25rem;
     margin: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: 2.5%; 
     background: #9B8BAF;
-    opacity:0.9;
+    opacity:0.92;
     padding: 20px 30px;
     border-radius: 15px;
     color: black;
 }
 
-.form_borrar h1 {
+.form_admin h1 {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
     height: 40px;
-    font-size: 30px;
+    font-size: 34px;
     border-bottom:1px solid #ffffff;
     color: black;
     
@@ -92,7 +94,7 @@ fieldset{
     margin: 20px;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: auto 40rem auto;
+    grid-template-columns: auto 38rem auto;
     align-items: center;
     opacity: 1;
 }
@@ -112,17 +114,34 @@ fieldset{
 .texto_borrar h5{
     font-weight: normal;
     color:#797979;
+    opacity:1;
 }
 
-.btn_borrar{
+.btn_editar{
     align-self: right;
-    margin-right: 25px;
+    /* margin-right: 50px; */
     height:min-content;
     width: min-content;
     border-radius: 20px;
     border-color: transparent;
     padding-left: 10px;
     padding-right: 10px;
+    margin: 10px;
+    font-weight: bold;
+    background-color: #3FADEB;
+    color: #ffffff; 
+}
+
+.btn_borrar{
+    align-self: right;
+    /* margin-right: 25px; */
+    height:min-content;
+    width: min-content;
+    border-radius: 20px;
+    border-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
     font-weight: bold;
     background-color: #EB3F3F;
     color: #ffffff; 
@@ -133,23 +152,34 @@ fieldset{
 }
 
 
-.borrar::-webkit-scrollbar {
+.botones
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: max-content;
+    height: min-content;
+    margin: 20px;
+    opacity:1;
+}
+
+
+.admins::-webkit-scrollbar {
     width: 12px; 
     margin: 100px;
 }
 
-.borrar::-webkit-scrollbar-track {
+.admins::-webkit-scrollbar-track {
     background: #D4C6D9; 
     border-radius: 10px;
 }
 
-.borrar::-webkit-scrollbar-thumb {
+.admins::-webkit-scrollbar-thumb {
     background-color: #785E98; 
     border-radius: 10px; 
     border: 3px solid #e0e0e0; 
 }
 
-.borrar::-webkit-scrollbar-thumb:hover {
+.admins::-webkit-scrollbar-thumb:hover {
     background-color: #714c9e; 
 }
 
@@ -214,4 +244,20 @@ fieldset{
 
 /* --------------------------------------------------------------------- */
 
+.btn_nuevo{
+    /* align-self: right; */
+    margin-left: 50px;
+    height:min-content;
+    width: max-content;
+    border-radius: 20px;
+    border-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    background-color: #7DA9FF;
+    color: #ffffff; 
+}
 
+.btn_nuevo:hover{
+    background-color: #588fff;
+}

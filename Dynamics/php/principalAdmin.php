@@ -71,9 +71,7 @@
         <section id="opciones">
             <div id="usuarios" class="opc_admin">
                 <p class="usuarios_texto" id="user1">Usuarios</p>
-                <p class="usuarios_texto" id="user2">Crear usuario</p>
-                <p class="usuarios_texto" id="user3">Eliminar usuario</p>
-                <p class="usuarios_texto" id="user4">Cambiar contraseña</p>
+                <p class="usuarios_texto" id="user3">Gestionar Administradores</p>
             </div>
             <div id="recursos_admi" class="opc_admin">
                 <p class="recursosadmi_texto" id="recur1">Recursos</p>
