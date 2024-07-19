@@ -64,7 +64,7 @@ window.addEventListener("load", ()=>{
                 return respuesta.json();
             }).then((datosJSON)=>{
                 mostrarModal(datosJSON.mensaje);
-                location.href="../php/borrarAdminVista.php";
+                location.href="../php/gestionarAdmins.php";
             })
          }
     })

@@ -85,6 +85,6 @@ window.addEventListener("load", ()=>{
                 console.log(datosJSON.contrasena);
             });
         }
-        location.href="../php/borrarAdminVista.php";
+        location.href="../php/gestionarAdmins.php";
     });
 });
