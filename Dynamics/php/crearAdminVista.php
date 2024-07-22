@@ -51,6 +51,7 @@
                 <div class="form_inicio">
                     <h1>Crear Administrador</h1>
                     <input class="datos" type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                    <input class="datos" type="number" id="numTrabajador" name="numTrabajador" placeholder="Número de trabajador" required>
                     <input class="datos" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                     <button  class="button" id="enviar" name="enviar" type="submit">
                         Crear
