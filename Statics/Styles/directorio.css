@@ -33,6 +33,7 @@ body {
     
 }
 
+
 .sub_secciones{
     margin: 20px;
     border-radius: 20px;
@@ -54,7 +55,14 @@ body {
 }
 
 
-.tarjetas{
+.tarjetas2{
+    display: grid;
+    grid-template-columns: auto auto 33%;
+    align-items: left;
+    margin: 20px;
+}
+
+.tarjetas3{
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
@@ -73,14 +81,33 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-self: center;
+}
+
+.tarjeta h4{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tarjeta h5{
+    text-align: center;
+    font-size: 20px;
+}
+
+.tarjeta h6{
+    text-align: center;
+    font-size: 15px;
 }
 
 .imagen{
-    width: 10rem;
-    height: 10rem;
-    background-color: #3FADEB;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     margin: 5px;
+    background-color:  rgb(221, 221, 221);
+    object-fit: cover; /* Ajusta el contenido de la imagen para cubrir el área de la caja */
+    object-position: center top;
 }
 
 

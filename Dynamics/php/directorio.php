@@ -38,12 +38,36 @@
     <div class="directorio"> 
             <div class="div_directorio">
                 <h1>Directorio</h1>
+                    <!-------------------- DIRRECIÓN -------------------->
+                    <section class="secciones">
+                        <article class="sub_secciones"> 
+                            <h2>Dirección</h2>
+                        </article>
+                        <article class="tarjetas2">
+                            <div class="tarjeta">
+                                <h4 class="tamaño">Director</h4>
+                                <h5 class="tamaño">Dr. Raúl Rodríguez Díaz</h5>
+                                <img src="../../Statics/media/img/director.png" alt="Director" class="imagen">
+                                <h6 class="tamaño">Correo: <br>p9.direccion@enp.unam.mx</h6>
+                            </div>
+                            <div class="tarjeta">
+                                    <h4 class="tamaño">Secretario Académico</h4>
+                                    <h5 class="tamaño">Ing. Pablo Dávila Silva</h5>
+                                    <img src="../../Statics/media/img/secretario_academico.png" alt="Director" class="imagen">
+                                    <h6 class="tamaño">Correo: <br>academicap9​@enp.unam.mx​</h6>
+                            </div>
+                        </article>
+                    </section>
+                    <br>
+                    <br>
+
+                    <!--------------------  COORDINADORES -------------------->
                     <section class="secciones">
                         <article class="sub_secciones">
-                            <h2>Coordinadores</h2>
+                            <h2>Coordinadores</h2> 
                             <button type="button" id= "btnEditCo" class= "btnEdit">Editar</button>
                         </article>
-                        <article class="tarjetas">
+                        <article class="tarjetas3">
                             <div class="tarjeta">
                                 <h4>Coordinador General</h4>
                                 <h5>Luis Perez Pérez</h5>

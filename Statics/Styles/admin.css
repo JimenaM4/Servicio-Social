@@ -83,11 +83,18 @@ fieldset{
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
     height: 40px;
-    font-size: 34px;
+    font-size: 35px;
     border-bottom:1px solid #ffffff;
-    color: black;
-    
+    color: black;   
 }
+
+.form_admin h4{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+
 
 #administrador{
     background-color: rgb(255, 255, 255);
@@ -132,6 +139,10 @@ fieldset{
     color: #ffffff; 
 }
 
+.btn_editar:hover{
+    background-color: #3593c9;
+}
+
 .btn_borrar{
     align-self: right;
     /* margin-right: 25px; */
@@ -149,6 +160,26 @@ fieldset{
 
 .btn_borrar:hover{
     background-color: #ff0000;
+}
+
+
+.btn_select{
+    align-self: right;
+    /* margin-right: 50px; */
+    height:min-content;
+    width: min-content;
+    border-radius: 20px;
+    border-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    font-weight: bold;
+    background-color: #3FADEB;
+    color: #ffffff; 
+}
+
+.btn_select:hover{
+    background-color: #3593c9;
 }
 
 
